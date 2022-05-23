@@ -12,7 +12,6 @@ const storage = multer.diskStorage({
         cb(null, "./uploads")
     },
     filename: (req, file, cb) => {
-
         const { name, ext } = path.parse(file.originalname);
         cb(null, `${name}-${Date.now()}.${ext}}`)
     }
